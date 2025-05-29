@@ -1,14 +1,22 @@
-.download {
+.download,
+.warranty {
   padding-top: 3.125rem;
   padding-bottom: 3.125rem;
 }
 
-.download__wrapper {
+.download__wrapper,
+.warranty__wrapper {
   display: flex;
   justify-content: space-between;
+  gap: 110px;
 }
 
-.download__text-block {
+.warranty__wrapper {
+  flex-direction: row-reverse;
+}
+
+.download__text-block,
+.warranty__text-block {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -22,7 +30,14 @@
   line-height: normal;
 }
 
-.download__copy {
+.warranty__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.download__copy,
+.warranty__copy {
   max-width: 31.25rem;
   font-size: 1.25rem;
   font-style: normal;
@@ -34,13 +49,19 @@
   gap: 1.25rem;
 }
 
-.download__image-block {
+.download__image-block,
+.warranty__image-block {
   width: 50%;
   display: flex;
   justify-content: flex-end;
 }
 
-.download__image-block img {
+.warranty__image-block {
+  justify-content: flex-start;
+}
+
+.download__image-block img,
+.warranty__image-block img {
   max-width: 100%;
   height: auto;
   border-radius: 1.25rem;
@@ -48,11 +69,22 @@
 }
 
 @media (max-width: 1152px) {
+
+  .download__wrapper,
+  .warranty__wrapper {
+    gap: 40px;
+  }
+
   .download__title {
     font-size: 2.625rem;
   }
 
-  .download__copy {
+  .warranty__title {
+    font-size: 2.125rem;
+  }
+
+  .download__copy,
+  .warranty__copy {
     max-width: 27.8125rem;
     font-size: 1.125rem;
     line-height: 1.6875rem;
@@ -60,11 +92,22 @@
 }
 
 @media (max-width: 920px) {
+
+  .download__wrapper,
+  .warranty__wrapper {
+    gap: 30px;
+  }
+
   .download__title {
     font-size: 2.25rem;
   }
 
-  .download__copy {
+  .warranty__title {
+    font-size: 1.875rem;
+  }
+
+  .download__copy,
+  .warranty__copy {
     max-width: 20.625rem;
     font-size: .875rem;
     line-height: 1.3125rem;
@@ -72,24 +115,33 @@
 }
 
 @media (max-width: 720px) {
-  .download__wrapper {
+
+  .download__wrapper,
+  .warranty__wrapper {
     flex-direction: column;
     align-items: center;
     gap: 30px;
   }
 
-  .download__text-block {
+  .download__text-block,
+  .warranty__text-block {
     width: 100%;
     align-items: center;
   }
 
   .download__title {
+    font-size: 1.875rem;
     max-width: 20.625rem;
   }
 
-  .download__image-block {
+  .warranty__title {
+    font-size: 1.625rem;
+  }
+
+  .download__image-block,
+  .warranty__image-block {
     width: 100%;
     justify-content: center;
-   
+
   }
 }
