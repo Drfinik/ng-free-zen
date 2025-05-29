@@ -1,13 +1,17 @@
+
+
 .download,
 .warranty,
-.care {
+.care,
+.cashback {
   padding-top: 3.125rem;
   padding-bottom: 3.125rem;
 }
 
 .download__wrapper,
 .warranty__wrapper,
-.care__wrapper {
+.care__wrapper,
+.cashback__wrapper {
   display: flex;
   justify-content: space-between;
   gap: 110px;
@@ -17,15 +21,29 @@
   flex-direction: row-reverse;
 }
 
+.cashback__wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 .download__text-block,
 .warranty__text-block,
-.care__text-block {
+.care__text-block,
+.cashback__text-block {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
 }
+
+.cashback__text-block {
+  width: 100%;
+  align-items: center;
+}
+
 
 .download__title {
   font-size: 3.5rem;
@@ -34,7 +52,8 @@
 }
 
 .warranty__title,
-.care__title {
+.care__title,
+.cashback__title {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: normal;
@@ -42,11 +61,17 @@
 
 .download__copy,
 .warranty__copy,
-.care__copy {
+.care__copy,
+.cashback__copy {
   max-width: 31.25rem;
   font-size: 1.25rem;
   font-style: normal;
   line-height: 1.875rem;
+  text-align: left;
+}
+
+.cashback__copy {
+  text-align: center;
 }
 
 .download__links {
@@ -75,20 +100,49 @@
   border: .0625rem solid #AAA;
 }
 
+.cashback__btn {
+  max-width: max-content;
+  padding: 15px 39px;
+  border-radius: 30px;
+  border: 1px solid #AAA;
+  font-size: 18px;
+  line-height: normal;
+  cursor: pointer;
+  background:var(--color-light) ;
+}
+
+.dark .cashback__btn {
+  background: var(--color-dark);
+  color: var(--color-text-dark);
+  border-color: var(--color-text-dark);
+}
+
 @media (max-width: 1152px) {
 
   .download__wrapper,
-  .warranty__wrapper, 
+  .warranty__wrapper,
   .care__wrapper {
     gap: 40px;
+  }
+
+  .cashback__wrapper {
+    gap: 20px;
+  }
+
+  .download__text-block,
+  .warranty__text-block,
+  .care__text-block,
+  .cashback__text-block {
+    gap: 10px;
   }
 
   .download__title {
     font-size: 2.625rem;
   }
 
-  .warranty__title, 
-  .care__title {
+  .warranty__title,
+  .care__title,
+  .cashback__title {
     font-size: 2.125rem;
   }
 
@@ -96,6 +150,11 @@
   .warranty__copy,
   .care__copy {
     max-width: 27.8125rem;
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+  }
+
+  .cashback__copy {
     font-size: 1.125rem;
     line-height: 1.6875rem;
   }
@@ -113,8 +172,9 @@
     font-size: 2.25rem;
   }
 
-  .warranty__title, 
-  .care__title {
+  .warranty__title,
+  .care__title,
+  .cashback__title {
     font-size: 1.875rem;
   }
 
@@ -125,6 +185,17 @@
     font-size: .875rem;
     line-height: 1.3125rem;
   }
+
+  .cashback__copy {
+    max-width: 28.75rem;
+    font-size: .875rem;
+    line-height: 1.3125rem;
+  }
+
+  .cashback__btn {
+    font-size: 1rem;
+  }
+
 }
 
 @media (max-width: 720px) {
@@ -150,7 +221,8 @@
   }
 
   .warranty__title,
-  .care__title {
+  .care__title,
+  .cashback__title {
     font-size: 1.625rem;
   }
 
