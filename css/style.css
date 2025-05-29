@@ -1,0 +1,232 @@
+:root {
+  --color-light: #ffffff;
+  --color-dark: #121212;
+  --color-text-light: #000000;
+  --color-text-dark: #ffffff;
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-border-dark: #333;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-light);
+  color: var(--color-text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 10rem);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: border-color 0.3s;
+}
+
+
+.header__logo {
+  padding: 1.1875rem 0;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(1.25rem, 3vw, 3.125rem);
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 3rem);
+  list-style: none;
+}
+
+.header__link {
+  font-size: 1.25rem;
+  transition: opacity 0.3s;
+}
+
+.header__link:hover {
+  opacity: 0.8;
+}
+
+
+.header__lang--btn {
+  padding: 0.6875rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-text-light);
+  font-size: 1.125rem;
+  line-height: 100%;
+  transition: var(--transition);
+}
+
+.header__lang--btn span {
+  padding-left: 6px;
+  color: #111111;
+}
+
+.header__lang--btn path {
+
+  fill: var(--color-text-light);
+}
+
+.dark .header__lang--btn span svg path {
+
+  fill: var(--color-text-dark);
+}
+
+
+
+.header__theme--btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__menu--btn {
+  width: 1.875rem;
+  height: 1.25rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger-line {
+  display: block;
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--color-text-light);
+  transition: var(--transition);
+  transform-origin: center;
+}
+
+/* Dark theme styles */
+.dark {
+  background: var(--color-dark);
+  color: var(--color-text-dark);
+}
+
+.dark .header {
+  border-color: var(--color-border-dark);
+}
+
+.dark .header__lang--btn {
+  color: var(--color-text-dark);
+  border-color: var(--color-text-dark);
+}
+
+.dark .burger-line {
+  background-color: var(--color-text-dark);
+}
+
+/* Mobile menu styles */
+@media (max-width: 780px) {
+
+  .header__menu--btn {
+    display: flex;
+  }
+
+  .header__list {
+    display: none;
+    width: 100%;
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    top: 4.85rem;
+    right: 0;
+    background: var(--color-light);
+    box-shadow: var(--shadow);
+    padding-bottom: 7.375rem;
+    z-index: 100;
+  }
+
+  .dark .header__list {
+    background-color: var(--color-dark);
+  }
+
+  .header__item {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background 0.2s;
+  }
+
+  .dark .header__item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .header__item:hover {
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .dark .header__item:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .header__list.active {
+    display: flex;
+  }
+}
+
+/* Burger animation */
+.header__menu--btn.active .burger-line:nth-child(1) {
+  transform: translateY(0.625rem) rotate(45deg);
+}
+
+.header__menu--btn.active .burger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-1.25rem);
+}
+
+.header__menu--btn.active .burger-line:nth-child(3) {
+  transform: translateY(-0.5rem) rotate(-45deg);
+}
