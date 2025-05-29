@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkLogo = document.querySelector('.header__logo--dark');
     const lightThemeIcon = document.querySelector('.header__theme--light');
     const darkThemeIcon = document.querySelector('.header__theme--dark');
+    const lightClientsItem = document.querySelectorAll('.clients__item--light');
+    const darkClientsItem = document.querySelectorAll('.clients__item--dark');
     
     [lightLogo, lightThemeIcon].forEach(el => {
       if (el) el.style.display = isDark ? 'none' : 'block';
@@ -39,6 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
     [darkLogo, darkThemeIcon].forEach(el => {
       if (el) el.style.display = isDark ? 'block' : 'none';
     });
+
+    lightClientsItem.forEach(el => {
+      el.style.display = isDark ? 'none' : 'block';
+    });
+
+    darkClientsItem.forEach(el => {
+      el.style.display = isDark ? 'block' : 'none';
+    });
+    
   }
   
   // Mobile menu toggle

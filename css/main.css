@@ -3,7 +3,8 @@
 .download,
 .warranty,
 .care,
-.cashback {
+.cashback,
+.clients {
   padding-top: 3.125rem;
   padding-bottom: 3.125rem;
 }
@@ -44,6 +45,16 @@
   align-items: center;
 }
 
+.clients__images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 43px; 
+}
+
+.clients__item img {
+  width: 100%;
+}
 
 .download__title {
   font-size: 3.5rem;
@@ -232,5 +243,15 @@
     width: 100%;
     justify-content: center;
 
+  }
+
+  .clients__item {
+    max-width: 9.375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients__item {
+    max-width: 8.125rem;
   }
 }
