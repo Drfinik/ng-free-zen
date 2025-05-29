@@ -4,26 +4,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ng-free-zen - your description here">
   <title>ng-free-zen</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-  <!-- Шапка сайта -->
-  <header class="header"></header>
-<!-- Основной контент сайта -->
+  <header class="header container light">
+    <div class="header__logo">
+      <img class="header__logo--light" src="./asset/icon/logo_light.svg" alt="Company logo" width="100" height="40">
+      <img class="header__logo--dark" src="./asset/icon/logo_dark.svg" alt="Company logo" width="100" height="40"
+        style="display: none;">
+    </div>
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__item"><a href="#" class="header__link">Download</a></li>
+        <li class="header__item"><a href="#" class="header__link">Warranty</a></li>
+        <li class="header__item"><a href="#" class="header__link">Care</a></li>
+        <li class="header__item"><a href="#" class="header__link">Cashback</a></li>
+        <li class="header__item"><a href="#" class="header__link">Clients</a></li>
+      </ul>
+      <button class="header__lang--btn" aria-label="Change language">EN<span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
+            <path d="M4.5 6L0 1.49973L1.50071 0L4.5 3.00053L7.49929 0L9 1.49973L4.5 6Z" />
+          </svg>
+        </span>
+      </button>
+      <button class="header__theme--btn" aria-label="Toggle theme">
+        <img class="header__theme--light" src="./asset/icon/btn _theme_light.svg" alt="Light theme icon" width="24"
+          height="24">
+        <img class="header__theme--dark" src="./asset/icon/btn _theme_ dark.svg" alt="Dark theme icon" width="24"
+          height="24" style="display: none;">
+      </button>
+      <button class="header__menu--btn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </nav>
+  </header>
+
   <main class="main">
-    <!-- Секция 1 -->
     <section></section>
-    <!-- Секция 2 -->
     <section></section>
-    <!-- Секция 3 -->
     <section></section>
-    <!-- Секция 4 -->
     <section></section>
-    <!-- Секция 5 -->
     <section></section>
   </main>
-  <!-- Подвал сайта -->
-  <footer class="footer"></footer>
+
+  <footer class="footer" role="contentinfo"> </footer>
+  <script src="./scripts/script.js" defer></script>
 </body>
+
 </html>
