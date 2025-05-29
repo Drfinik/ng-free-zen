@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Elements
   const themeBtn = document.querySelector('.header__theme--btn');
   const header = document.querySelector('.header');
+  const main = document.querySelector('.main');
   const menuBtn = document.querySelector('.header__menu--btn');
   const menuList = document.querySelector('.header__list');
   const menuLinks = document.querySelectorAll('.header__link');
@@ -13,10 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme) {
       header.classList.add(savedTheme);
       updateThemeIcons(savedTheme === 'dark');
+      main.classList.add(savedTheme);
+      updateThemeIcons(savedTheme === 'dark');
     }
     
     themeBtn.addEventListener('click', () => {
       const isDark = header.classList.toggle('dark');
+      main.classList.toggle('dark', isDark);
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       updateThemeIcons(isDark);
     });
